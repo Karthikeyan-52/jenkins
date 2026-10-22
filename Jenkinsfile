@@ -1,3 +1,4 @@
+
 pipeline {
     agent any
 
@@ -5,14 +6,14 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building application...'
-                bat 'javac Hello.java'
+                bat 'javac -d . Hello.java'
             }
         }
 
         stage('Test') {
             steps {
                 echo 'Testing application...'
-                bat 'java Hello'
+                bat 'java jenkins.Hello'
             }
         }
 
